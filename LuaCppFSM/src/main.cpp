@@ -85,16 +85,19 @@ int main(int argc, char *argv[]) {
 		cout << "Dimensiones vector =" << Actores.size() << endl;
 		lua_close(Lua);
 	}
-	catch (error& e) {
+	catch (error e) {
 		object error_msg(from_stack(e.state(),-1));
 		cout << error_msg << " " << e.what() << endl;
+		return 1;
 	}
-	catch (cast_failed& e){
+	catch (cast_failed e){
 		object error_msg(from_stack(e.state(),-1));
 		cout << error_msg << " " << e.what() << endl;
+		return 1;
 	}
-	catch (exception& e){
+	catch (exception e){
 		cout << "Throw error: " << e.what() << endl;
+		return 1;
 	}
 	return 0;
 }
