@@ -12,9 +12,9 @@ end
 function Wife:SetCooking(val)
 	self.m_bCooking = val
 end
---function Wife:Cooking()
---	return self.m_bCooking
---end
+function Wife:Cooking()
+	return self.m_bCooking
+end
 -------------------------------------------------------------------------------
 -- create the WifesGlobalState state
 -------------------------------------------------------------------------------
